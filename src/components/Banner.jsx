@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import Header from './Header';
+import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Button, Grid } from "@mui/material"
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import HomeIcon from '@mui/icons-material/Home';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const useStyles = makeStyles({
     heroSection: {
-        position: 'relative', // Required for absolute positioning of text
+        position: 'relative',
         backgroundImage: `url("assets/banner_image.png")`, // Replace with the path to your image
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -18,12 +17,12 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        color: 'white', // Change text color if needed
+        color: 'white',
     },
     overlayText: {
         position: 'absolute',
         top: '50%',
-        left: "30%",
+        left: '30%',
         transform: 'translate(-50%, -50%)',
         textAlign: 'center',
         color: "#D79848"
@@ -31,22 +30,25 @@ const useStyles = makeStyles({
     subtitle: {
         color: "#23242E",
         margin: "0 20% 2% 20%",
+        textAlign: 'center',
     },
     paragraphtitle: {
         color: "#AB2D94",
-        marginBottom: "50px",
+        marginBottom: "20px",
         fontSize: "18px",
-        fontWeight: "700"
+        fontWeight: "700",
+        textAlign: 'center',
     },
-
+    contactInfo: {
+        textAlign: 'center',
+        marginTop: '20px',
+    },
 });
 
 
 export default function Banner() {
-
     const classes = useStyles();
-    const [showResume, setShowResume] = useState(false)
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleShowResume = () => {
         navigate('/resume')
@@ -62,29 +64,19 @@ export default function Banner() {
                 </div>
                 <div className='resume_section'>
                     <Button onClick={handleShowResume}>Print resume</Button>
-                    <Grid container spacing={2} justifyContent="center">
-                        <Grid item md={4}>
+                    <Grid container spacing={2} justifyContent="center" className={classes.contactInfo}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <p><EmailIcon />deepak.deep1911</p>
                         </Grid>
-                        <Grid item md={4}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <p><PhoneAndroidIcon />+91 62802-87747</p>
                         </Grid>
-                        <Grid item md={4}>
-                            <p><HomeIcon />#334,Phase 1, Mohali 160055</p>
+                        <Grid item xs={12} sm={12} md={4}>
+                            <p><HomeIcon />#334, Phase 1, Mohali 160055</p>
                         </Grid>
                     </Grid>
                 </div>
             </div>
-           
-                    {/* <div style={{ width: '100%', height: '100vh' }}>
-                        <iframe
-                            src="assets/deepak.pdf"
-                            title="PDF Viewer"
-                            style={{ width: '100%', height: '100%' }}
-                            frameBorder="0"
-                        />
-                    </div> */}
-               
         </div>
     )
 }

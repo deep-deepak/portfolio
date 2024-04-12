@@ -1,0 +1,83 @@
+:root {
+  --dark-pink: #AB2D94;
+  /* Define primary color */
+  --dark-gray: #23242E;
+  /* Define secondary color */
+  --dark-yellow: #D79848;
+  /* Define secondary color */
+  --light-white: white;
+  --pink-background: #ffd1f7;
+}
+
+
+
+body {
+  font-family: "Open Sans", "sans-serif";
+}
+
+
+
+.resume_section {
+  margin-right: 35rem;
+  margin-top: 25rem;
+}
+
+
+
+.resume_section button {
+  color: var(--light-white);
+  background: var(--dark-pink);
+}
+
+.resume_section button:hover {
+  color: var(--dark-pink);
+  background: transparent;
+  border: 1px solid var(--dark-pink);
+}
+
+.resume_section p {
+  color: var(--light-white);
+  ;
+  padding: 10px;
+}
+
+.resume_section p:hover {
+  color: var(--dark-yellow);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.footer_section {
+  background-color: var(--dark-yellow);
+  padding: 20px;
+  color: var(--dark-gray);
+}
+
+.header_section button:hover {
+  cursor: pointer;
+  color: var(--dark-pink);
+}
+
+.header_section button {
+  font-size: 20px;
+  font-family:cursive;
+}
+.header_section h6{
+  margin: 0;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 500;
+  font-size: 3.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  cursor: pointer;
+}
+
+.header_section h6 span{
+ color:var(--dark-pink);
+}
+
+button.active_nav {
+  cursor: pointer;
+  color: var(--dark-pink);
+}
+
